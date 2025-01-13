@@ -2,7 +2,9 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  lazygit_toggle = (import ./lazygit_toggle.nix pkgs).path;
+in {
   vim = {
     spellcheck.enable = true;
     viAlias = true;
@@ -11,6 +13,9 @@
       shiftwidth = 4;
       tabstop = 4;
     };
+    extraLuaFiles = [
+      lazygit_toggle
+    ];
     useSystemClipboard = true;
     lineNumberMode = "number";
     keymaps = [
@@ -18,25 +23,31 @@
         key = "<leader>f";
         mode = "n";
         silent = true;
-        action = ":Neotree toggle<CR>";
+        action = "<CMD>Neotree toggle<CR>";
       }
       {
         key = ";";
         mode = "n";
         silent = true;
-        action = ":";
+        action = "<CMD>";
       }
       {
         key = "<leader>ff";
         mode = "n";
         silent = true;
-        action = ":Telescope find_files<CR>";
+        action = "<CMD>Telescope find_files<CR>";
       }
       {
         key = "<leader>fg";
         mode = "n";
         silent = true;
-        action = ":Telescope live_grep<CR>";
+        action = "<CMD>Telescope live_grep<CR>";
+      }
+      {
+        key = "<leader>gg";
+        mode = "n";
+        silent = true;
+        action = ''<CMD>lua term_lazygit_toggle()<CR>'';
       }
       {
         key = "<C-h>";
@@ -217,7 +228,7 @@
     terminal = {
       toggleterm = {
         enable = true;
-        lazygit.enable = true;
+        lazygit.enable = false; #I use custom script
       };
     };
 
