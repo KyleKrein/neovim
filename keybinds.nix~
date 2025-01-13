@@ -12,12 +12,6 @@
     action = "<CMD>lua vim.diagnostic.open_float()<CR>";
   }
   {
-    key = "<a-cr>";
-    mode = "n";
-    silent = true;
-    action = "<CMD>lua vim.lsp.buf.code_action()<CR>";
-  }
-  {
     key = ";";
     mode = "n";
     silent = true;
