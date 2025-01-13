@@ -29,7 +29,7 @@ in {
         key = ";";
         mode = "n";
         silent = true;
-        action = "<CMD>";
+        action = ":";
       }
       {
         key = "<leader>ff";
