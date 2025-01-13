@@ -8,12 +8,74 @@
     viAlias = true;
     vimAlias = true;
     options = {
-	shiftwidth = 4;
-	tabstop = 4;
+      shiftwidth = 4;
+      tabstop = 4;
     };
     useSystemClipboard = true;
     lineNumberMode = "number";
+    keymaps = [
+      {
+        key = "<leader>f";
+        mode = "n";
+        silent = true;
+        action = ":Neotree toggle<CR>";
+      }
+      {
+        key = ";";
+        mode = "n";
+        silent = true;
+        action = ":";
+      }
+      {
+        key = "<leader>ff";
+        mode = "n";
+        silent = true;
+        action = ":Telescope find_files<CR>";
+      }
+      {
+        key = "<leader>fg";
+        mode = "n";
+        silent = true;
+        action = ":Telescope live_grep<CR>";
+      }
+      {
+        key = "<C-h>";
+        mode = ["n" "t"];
+        silent = true;
+        action = "<CMD>wincmd h<CR>";
+      }
+      {
+        key = "<C-j>";
+        mode = ["n" "t"];
+        silent = true;
+        action = "<CMD>wincmd j<CR>";
+      }
+      {
+        key = "<C-k>";
+        mode = ["n" "t"];
+        silent = true;
+        action = "<CMD>wincmd k<CR>";
+      }
+      {
+        key = "<C-l>";
+        mode = ["n" "t"];
+        silent = true;
+        action = "<CMD>wincmd l<CR>";
+      }
+      {
+        key = "<C-t>";
+        mode = ["n" "t"];
+        silent = true;
+        action = "<CMD>ToggleTerm<CR>";
+      }
 
+      #{
+      # key = "<leader>p";
+      # mode = "n";
+      # silent = true;
+      # action = '':lua require("cellular-automaton").start_animation("make_it_rain")<CR>'';
+      #}
+    ];
     languages = {
       enableFormat = true;
       enableLSP = true;
@@ -24,6 +86,8 @@
       clang.enable = true;
       rust.crates.enable = true;
       csharp.enable = true;
+      markdown.enable = true;
+      python.enable = true;
       # Nim LSP is broken on Darwin and therefore
       # should be disabled by default. Users may still enable
       # `vim.languages.vim` to enable it, this does not restrict
