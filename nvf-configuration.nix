@@ -117,7 +117,7 @@ in {
 
     minimap = {
       minimap-vim.enable = false;
-      codewindow.enable = true; # lighter, faster, and uses lua for configuration
+      codewindow.enable = false; # lighter, faster, and uses lua for configuration
     };
 
     dashboard = {
@@ -130,23 +130,23 @@ in {
     };
 
     projects = {
-      project-nvim.enable = true;
+      project-nvim.enable = false;
     };
 
     utility = {
       ccc.enable = false;
       vim-wakatime.enable = false;
       icon-picker.enable = true;
-      surround.enable = true;
+      surround.enable = false;
       diffview-nvim.enable = true;
       motion = {
-        hop.enable = true;
-        leap.enable = true;
-        precognition.enable = true;
+        hop.enable = false;
+        leap.enable = false;
+        precognition.enable = false;
       };
 
       images = {
-        image-nvim.enable = false;
+        image-nvim.enable = false; #fails to load
       };
     };
 
