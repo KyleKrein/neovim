@@ -16,7 +16,7 @@ in {
     extraLuaFiles = [
       lazygit_toggle
     ];
-    enableLuaLoader = false; #Experimental
+    enableLuaLoader = true; #Experimental
     useSystemClipboard = true;
     lineNumberMode = "number";
     keymaps = import ./keybinds.nix;
